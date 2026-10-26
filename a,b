@@ -1,0 +1,118 @@
+ReactJS – Render HTML, JSX, Components – function & Class
+ 
+a. Write a program to render HTML to a web page.
+b. Write a program for writing markup with JSX.
+c. Write a program for creating and nesting components (function and class).
+ReactJS is a Library to build interactive web apps.
+Render HTML means to Display static content
+JSX stands for JavaScript XML
+Components means Reusable, nestable UI blocks
+Uses are Faster development, maintainable code, dynamic pages, widely used in industry.
+What is ReactJS?
+ ReactJS is a JavaScript library used to build user interfaces (UI), mainly for web 
+apps.
+ It is component-based, meaning the UI is broken into reusable parts (components).
+ Created by Facebook, it makes building dynamic, interactive web pages easier and 
+faster.
+Why use ReactJS?
+1. Reusable Components – Write a component once, use it anywhere.
+2. Fast Rendering – Uses Virtual DOM (DOM stands for Document Object Model.) 
+to update only the changed parts of the page.
+3. Easy to Write UI – JSX(JSX stands for JavaScript XML write HTML-like code 
+inside JavaScript.) lets you write HTML-like code in JavaScript.
+4. Component Nesting – Build complex UIs by combining small components.
+5. Popular in Industry – Many modern web apps (Facebook, Instagram) use React.
+How to execute:
+Step 1: Create a React App
+1. Open VS Code.
+2. Open a new terminal in VS Code (Ctrl+` ). 3. Run these commands:
+4. npx create-react-app myapp
+5. cd myapp
+6. code
+o This creates a folder myapp with a React project.
+o code opens it in VS Code.
+5(a) Render HTML
+ What it means: Display simple HTML content on a web page using React.
+ Example: Show a heading or paragraph.
+ Why use: Helps beginners understand how React renders content.
+Rendering means showing content on the screen.
+In normal HTML, the browser shows <h1>Hello</h1> directly.
+In React, we write HTML inside a component (like a function). 
+React then renders (displays) that HTML into the browser.
+We use root.render(<App />) to tell React what to show.
+Example:
+fnction App() {
+return <h1>Hello Students</h1>;
+}
+This will render (show) “Hello Students” on the web page. 
+Without render, our code just sits in VS Code – users cannot see it.
+ React re-renders automatically if data changes (fast updates).
+Open App.js
+ In VS Code sidebar → open src/App.js.
+Program5(a):
+import Reactfrom"react"; 
+function App() 
+{ return <h1>Hello, React!</h1>;// Renders plain HTML
+ }
+export default App;
+How to Run the Program
+In terminal:
+npm start
+ Browser opens at http://localhost:3000.
+ Output will show based on the code you pasted.
+ React DOM automatically renders App into the root <div> in index.html.
+ This displays simple HTML content on the page. 5(b) JSX (JavaScript XML)
+ What it means: Write HTML-like code inside JavaScript.
+ Example: <div><h1>Welcome</h1><p>JSX is easy!</p></div>
+ Why we use: Makes writing UI readable and maintainable, lets you embed
+JavaScript logic in HTML easily.
+Program:
+function App() {
+return (
+<div>
+<h1>Welcome to JSX</h1>
+<p>JSX makes writing UI easier!</p>
+</div>
+);
+}
+export default App; 5(c) Components (Function & Class)
+ What it means: Build reusable building blocks of UI.
+1. Function Component – Simple, returns JSX, no state (basic).
+2. Class Component – Can have state, lifecycle methods, more powerful.
+ Nesting Components: Using one component inside another to create a hierarchy of 
+UI.
+ Why we use: Helps organize code, avoid repetition, and make apps scalable.
+Visualizing Components
+App (Main Component)
+│
+└─ Welcome (Class Component)
+│
+└─ Greeting (Function Component)
+ Each box is a component.
+ Arrows show nesting, how small components combine to form complex UI.
+Program:
+import React from "react";
+// Function Component
+function Greeting() {
+ return <h2>Hello from Function Component</h2>;
+}
+// Class Component
+class Welcome extends React.Component {
+ render() {
+ return (
+ <div>
+ <h2>Hello from Class Component</h2>
+ <Greeting />
+ </div>
+ );
+ }
+} // Main Component
+function App() {
+ return (
+ <div>
+ <h1>React Components Example</h1>
+ <Welcome />
+ </div>
+ );
+}
+export default App;
